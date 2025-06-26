@@ -69,7 +69,7 @@ const Index = () => {
               <a href="#plans" className="text-gray-700 hover:text-orange-600 transition-colors">Pläne</a>
               <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors">Bewertungen</a>
               <Link to="/create-plan">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
                   Plan erstellen
                 </Button>
               </Link>
@@ -96,7 +96,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/create-plan">
-                  <Button size="lg" className="text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gray-800 hover:bg-gray-700">
+                  <Button size="lg" className="text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-green-500 hover:bg-green-600">
                     Ernährungsplan erstellen
                   </Button>
                 </Link>
@@ -215,7 +215,7 @@ const Index = () => {
                 </ul>
 
                 <Link to="/create-plan">
-                  <Button className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${plan.popular ? 'bg-white text-orange-600 hover:bg-orange-50' : 'bg-orange-500 text-white hover:bg-orange-600'}`}>
+                  <Button className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${plan.popular ? 'bg-white text-orange-600 hover:bg-orange-50' : 'bg-green-500 text-white hover:bg-green-600'}`}>
                     Plan wählen
                   </Button>
                 </Link>
@@ -278,7 +278,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/create-plan">
-                <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <Button size="lg" className="bg-green-500 text-white hover:bg-green-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                   Jetzt kostenlosen Plan erstellen
                 </Button>
               </Link>

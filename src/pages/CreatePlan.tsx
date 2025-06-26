@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -401,7 +400,7 @@ const CreatePlan = () => {
               {currentStep < totalSteps ? (
                 <Button
                   onClick={handleNext}
-                  className="flex items-center bg-orange-500 hover:bg-orange-600"
+                  className="flex items-center bg-green-500 hover:bg-green-600"
                 >
                   Weiter
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -409,7 +408,7 @@ const CreatePlan = () => {
               ) : (
                 <Button
                   onClick={handleSubmit}
-                  className="flex items-center bg-orange-500 hover:bg-orange-600"
+                  className="flex items-center bg-green-500 hover:bg-green-600"
                 >
                   Plan erstellen
                   <CheckCircle className="w-4 h-4 ml-2" />
