@@ -69,7 +69,7 @@ const Index = () => {
               <a href="#plans" className="text-white hover:text-orange-300 transition-colors">Pläne</a>
               <a href="#testimonials" className="text-white hover:text-orange-300 transition-colors">Bewertungen</a>
               <Link to="/create-plan">
-                <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                <Button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
                   Plan erstellen
                 </Button>
               </Link>
@@ -96,7 +96,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/create-plan">
-                  <Button size="lg" className="text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-red-500 hover:bg-red-600">
+                  <Button size="lg" className="text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-pink-500 hover:bg-pink-600">
                     Ernährungsplan erstellen
                   </Button>
                 </Link>
@@ -215,7 +215,7 @@ const Index = () => {
                 </ul>
 
                 <Link to="/create-plan">
-                  <Button className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${plan.popular ? 'bg-white text-orange-600 hover:bg-orange-50' : 'bg-red-500 text-white hover:bg-red-600'}`}>
+                  <Button className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${plan.popular ? 'bg-white text-orange-600 hover:bg-orange-50' : 'bg-pink-500 text-white hover:bg-pink-600'}`}>
                     Plan wählen
                   </Button>
                 </Link>
@@ -278,7 +278,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/create-plan">
-                <Button size="lg" className="bg-red-500 text-white hover:bg-red-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <Button size="lg" className="bg-pink-500 text-white hover:bg-pink-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                   Jetzt kostenlosen Plan erstellen
                 </Button>
               </Link>

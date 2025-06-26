@@ -400,7 +400,7 @@ const CreatePlan = () => {
               {currentStep < totalSteps ? (
                 <Button
                   onClick={handleNext}
-                  className="flex items-center bg-red-500 hover:bg-red-600"
+                  className="flex items-center bg-pink-500 hover:bg-pink-600"
                 >
                   Weiter
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -408,7 +408,7 @@ const CreatePlan = () => {
               ) : (
                 <Button
                   onClick={handleSubmit}
-                  className="flex items-center bg-red-500 hover:bg-red-600"
+                  className="flex items-center bg-pink-500 hover:bg-pink-600"
                 >
                   Plan erstellen
                   <CheckCircle className="w-4 h-4 ml-2" />
