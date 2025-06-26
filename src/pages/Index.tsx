@@ -53,21 +53,21 @@ const Index = () => {
   }];
   return <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <header className="shadow-sm sticky top-0 z-50" style={{ backgroundColor: '#024589' }}>
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
                 <Utensils className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-white">
                 VitalPlan
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">Über uns</a>
-              <a href="#plans" className="text-gray-700 hover:text-orange-600 transition-colors">Pläne</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors">Bewertungen</a>
+              <a href="#about" className="text-white hover:text-orange-300 transition-colors">Über uns</a>
+              <a href="#plans" className="text-white hover:text-orange-300 transition-colors">Pläne</a>
+              <a href="#testimonials" className="text-white hover:text-orange-300 transition-colors">Bewertungen</a>
               <Link to="/create-plan">
                 <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
                   Plan erstellen
