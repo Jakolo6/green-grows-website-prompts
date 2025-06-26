@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
-import { Leaf, Heart, FlaskConical, Utensils, Users, Star } from "lucide-react";
+import { Leaf, Heart, FlaskConical, Utensils, Users, Star, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
