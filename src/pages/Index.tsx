@@ -1,9 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Heart, FlaskConical, Utensils, Users, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const plans = [
@@ -68,62 +68,69 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Leaf className="w-8 h-8 text-orange-600" />
-            <h1 className="text-2xl font-bold text-orange-800">VitalGreen</h1>
+      <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                <Utensils className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+                VitalPlan
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">Über uns</a>
+              <a href="#plans" className="text-gray-700 hover:text-orange-600 transition-colors">Pläne</a>
+              <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors">Bewertungen</a>
+              <Link to="/create-plan">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                  Plan erstellen
+                </Button>
+              </Link>
+            </div>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#philosophy" className="text-orange-700 hover:text-orange-900 transition-colors">Philosophie</a>
-            <a href="#plans" className="text-orange-700 hover:text-orange-900 transition-colors">Pläne</a>
-            <a href="#testimonials" className="text-orange-700 hover:text-orange-900 transition-colors">Kundenstimmen</a>
-            <a href="#contact" className="text-orange-700 hover:text-orange-900 transition-colors">Kontakt</a>
-          </nav>
-          <Button className="bg-orange-600 hover:bg-orange-700 text-white">
-            Jetzt starten
-          </Button>
-        </div>
+        </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
-          }}
-        />
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="animate-fade-in">
-            <h2 className="text-5xl md:text-7xl font-bold text-orange-800 mb-6 leading-tight">
-              Nähre deinen Körper.
-              <br />
-              <span className="text-orange-600">Nähre den Planeten.</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-orange-700 mb-8 max-w-2xl mx-auto">
-              Entdecke personalisierte Ernährungspläne, die nicht nur deine Gesundheit fördern, 
-              sondern auch unsere Umwelt schützen.
-            </p>
-            <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg">
-                Ernährungsplan erstellen
-              </Button>
-              <Button size="lg" variant="outline" className="border-orange-600 text-orange-600 hover:bg-orange-50 px-8 py-4 text-lg">
-                Mehr erfahren
-              </Button>
+      <section className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+                  Nähre deinen Körper.
+                </span>
+                <br />
+                <span className="text-gray-800">Nähre den Planeten.</span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+                Entdecke eine neue Art der Ernährung mit personalisierten Plänen, die auf nachhaltigen, 
+                wissenschaftlich fundierten Prinzipien basieren.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/create-plan">
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Ernährungsplan erstellen
+                  </Button>
+                </Link>
+                <Button size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-full text-lg transition-all duration-300">
+                  Mehr erfahren
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 rounded-3xl transform rotate-6 opacity-20"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" 
+                alt="Frische Lebensmittel" 
+                className="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl"
+              />
             </div>
           </div>
-        </div>
-        
-        {/* Floating elements */}
-        <div className="absolute top-20 left-10 animate-bounce delay-300">
-          <div className="w-16 h-16 bg-orange-200 rounded-full opacity-60"></div>
-        </div>
-        <div className="absolute bottom-20 right-10 animate-bounce delay-700">
-          <div className="w-12 h-12 bg-orange-300 rounded-full opacity-40"></div>
         </div>
       </section>
 
@@ -165,45 +172,115 @@ const Index = () => {
 
       {/* Plans Section */}
       <section id="plans" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h3 className="text-4xl md:text-5xl font-bold text-orange-800 mb-6">Unsere Pläne</h3>
-            <p className="text-xl text-orange-700 max-w-3xl mx-auto">
-              Wählen Sie den Plan, der am besten zu Ihrem Lebensstil passt. 
-              Jeder Plan wird individuell an Ihre Bedürfnisse angepasst.
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Wähle deinen <span className="text-orange-600">perfekten Plan</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Jeder Plan ist individuell auf deine Bedürfnisse, Ziele und Vorlieben abgestimmt
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {plans.map((plan, index) => (
-              <Card key={index} className={`relative hover:shadow-xl transition-all duration-300 ${plan.popular ? 'border-orange-500 border-2 scale-105' : 'border-orange-200'}`}>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Starter",
+                price: "29€",
+                period: "pro Monat",
+                description: "Perfekt für Einsteiger",
+                features: [
+                  "Personalisierter Ernährungsplan",
+                  "Wöchentliche Rezepte",
+                  "Grundlegende Nährstoffanalyse",
+                  "Email-Support"
+                ],
+                popular: false
+              },
+              {
+                name: "Pro",
+                price: "49€",
+                period: "pro Monat",
+                description: "Für ambitionierte Ziele",
+                features: [
+                  "Erweiterte Personalisierung",
+                  "Täglich neue Rezepte",
+                  "Detaillierte Nährstoffanalyse",
+                  "Einkaufslisten",
+                  "Priority Support",
+                  "Fitness-Integration"
+                ],
+                popular: true
+              },
+              {
+                name: "Premium",
+                price: "79€",
+                period: "pro Monat",
+                description: "Komplette Transformation",
+                features: [
+                  "Alles aus Pro",
+                  "1:1 Ernährungsberatung",
+                  "Wöchentliche Check-ins",
+                  "Supplement-Empfehlungen",
+                  "Meal-Prep Guides",
+                  "24/7 Premium Support"
+                ],
+                popular: false
+              }
+            ].map((plan, index) => (
+              <div key={index} className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
+                plan.popular 
+                  ? 'bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-2xl scale-105' 
+                  : 'bg-white shadow-lg hover:shadow-xl border border-gray-100'
+              }`}>
                 {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white">
-                    Beliebtester Plan
-                  </Badge>
-                )}
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 p-4 bg-orange-100 rounded-full w-fit">
-                    {plan.icon}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-white text-orange-600 px-4 py-1 text-sm font-semibold">
+                      Beliebtester Plan
+                    </Badge>
                   </div>
-                  <CardTitle className="text-2xl text-orange-800">{plan.title}</CardTitle>
-                  <CardDescription className="text-orange-600">{plan.description}</CardDescription>
-                  <div className="text-3xl font-bold text-orange-800 mt-4">{plan.price}</div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-orange-700">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                )}
+                
+                <div className="text-center mb-8">
+                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-gray-800'}`}>
+                    {plan.name}
+                  </h3>
+                  <div className="mb-2">
+                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-orange-600'}`}>
+                      {plan.price}
+                    </span>
+                    <span className={`text-sm ${plan.popular ? 'text-orange-100' : 'text-gray-500'}`}>
+                      /{plan.period}
+                    </span>
+                  </div>
+                  <p className={`${plan.popular ? 'text-orange-100' : 'text-gray-600'}`}>
+                    {plan.description}
+                  </p>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center">
+                      <CheckCircle className={`w-5 h-5 mr-3 ${plan.popular ? 'text-orange-200' : 'text-orange-500'}`} />
+                      <span className={`${plan.popular ? 'text-white' : 'text-gray-700'}`}>
                         {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link to="/create-plan">
+                  <Button 
+                    className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${
+                      plan.popular 
+                        ? 'bg-white text-orange-600 hover:bg-orange-50' 
+                        : 'bg-orange-500 text-white hover:bg-orange-600'
+                    }`}
+                  >
                     Plan wählen
                   </Button>
-                </CardContent>
-              </Card>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -254,28 +331,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-700 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
-            }}
-          />
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Bereit für Ihre Transformation?
-          </h3>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-            Starten Sie noch heute Ihre Reise zu einem gesünderen, nachhaltigeren Leben. 
-            Unser Team von Ernährungsexperten begleitet Sie auf jedem Schritt.
-          </p>
-          <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-4 text-lg font-semibold">
-            Kostenloses Beratungsgespräch buchen
-          </Button>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Bereit für deine Transformation?
+            </h2>
+            <p className="text-xl text-orange-100 mb-8">
+              Starte heute mit deinem personalisierten Ernährungsplan und erlebe, 
+              wie sich dein Leben verändert.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/create-plan">
+                <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                  Jetzt kostenlosen Plan erstellen
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full text-lg transition-all duration-300">
+                Kostenloses Beratungsgespräch
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
