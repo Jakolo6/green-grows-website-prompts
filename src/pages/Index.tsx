@@ -4,71 +4,54 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Heart, FlaskConical, Utensils, Users, Star, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
-  const plans = [
-    {
-      title: "Basis Plan",
-      description: "Perfekt für den Einstieg in eine gesunde Ernährung",
-      features: ["Personalisierte Ernährungspläne", "Wöchentliche Rezepte", "Grundlegende Nährstoffanalyse"],
-      price: "29€/Monat",
-      icon: <Sprout className="w-8 h-8 text-orange-600" />
-    },
-    {
-      title: "Premium Plan",
-      description: "Umfassende Betreuung für optimale Gesundheit",
-      features: ["Alles aus Basis Plan", "1-zu-1 Ernährungsberatung", "Detaillierte Gesundheitsanalyse", "24/7 Support"],
-      price: "69€/Monat",
-      icon: <Leaf className="w-8 h-8 text-orange-600" />,
-      popular: true
-    },
-    {
-      title: "Familie Plan",
-      description: "Gesunde Ernährung für die ganze Familie",
-      features: ["Bis zu 4 Familienmitglieder", "Kinderfreundliche Rezepte", "Familien-Ernährungscoaching"],
-      price: "89€/Monat",
-      icon: <Users className="w-8 h-8 text-orange-600" />
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah M.",
-      text: "Dank der personalisierten Pläne habe ich endlich eine gesunde Routine entwickelt. Ich fühle mich energiegeladener denn je!",
-      rating: 5
-    },
-    {
-      name: "Michael K.",
-      text: "Die wissenschaftlich fundierte Herangehensweise hat mich überzeugt. Meine Blutwerte haben sich deutlich verbessert.",
-      rating: 5
-    },
-    {
-      name: "Anna L.",
-      text: "Als vielbeschäftigte Mutter war es perfekt - einfache, gesunde Rezepte für die ganze Familie.",
-      rating: 5
-    }
-  ];
-
-  const values = [
-    {
-      icon: <Leaf className="w-12 h-12 text-orange-600" />,
-      title: "Nachhaltigkeit",
-      description: "Wir setzen auf lokale, saisonale Zutaten für eine bessere Zukunft"
-    },
-    {
-      icon: <FlaskConical className="w-12 h-12 text-orange-600" />,
-      title: "Wissenschaftlich fundiert",
-      description: "Alle Pläne basieren auf aktuellen Ernährungswissenschaften"
-    },
-    {
-      icon: <Heart className="w-12 h-12 text-orange-600" />,
-      title: "Personalisiert",
-      description: "Jeder Plan wird individuell an Ihre Bedürfnisse angepasst"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
+  const plans = [{
+    title: "Basis Plan",
+    description: "Perfekt für den Einstieg in eine gesunde Ernährung",
+    features: ["Personalisierte Ernährungspläne", "Wöchentliche Rezepte", "Grundlegende Nährstoffanalyse"],
+    price: "29€/Monat",
+    icon: <Sprout className="w-8 h-8 text-orange-600" />
+  }, {
+    title: "Premium Plan",
+    description: "Umfassende Betreuung für optimale Gesundheit",
+    features: ["Alles aus Basis Plan", "1-zu-1 Ernährungsberatung", "Detaillierte Gesundheitsanalyse", "24/7 Support"],
+    price: "69€/Monat",
+    icon: <Leaf className="w-8 h-8 text-orange-600" />,
+    popular: true
+  }, {
+    title: "Familie Plan",
+    description: "Gesunde Ernährung für die ganze Familie",
+    features: ["Bis zu 4 Familienmitglieder", "Kinderfreundliche Rezepte", "Familien-Ernährungscoaching"],
+    price: "89€/Monat",
+    icon: <Users className="w-8 h-8 text-orange-600" />
+  }];
+  const testimonials = [{
+    name: "Sarah M.",
+    text: "Dank der personalisierten Pläne habe ich endlich eine gesunde Routine entwickelt. Ich fühle mich energiegeladener denn je!",
+    rating: 5
+  }, {
+    name: "Michael K.",
+    text: "Die wissenschaftlich fundierte Herangehensweise hat mich überzeugt. Meine Blutwerte haben sich deutlich verbessert.",
+    rating: 5
+  }, {
+    name: "Anna L.",
+    text: "Als vielbeschäftigte Mutter war es perfekt - einfache, gesunde Rezepte für die ganze Familie.",
+    rating: 5
+  }];
+  const values = [{
+    icon: <Leaf className="w-12 h-12 text-orange-600" />,
+    title: "Nachhaltigkeit",
+    description: "Wir setzen auf lokale, saisonale Zutaten für eine bessere Zukunft"
+  }, {
+    icon: <FlaskConical className="w-12 h-12 text-orange-600" />,
+    title: "Wissenschaftlich fundiert",
+    description: "Alle Pläne basieren auf aktuellen Ernährungswissenschaften"
+  }, {
+    icon: <Heart className="w-12 h-12 text-orange-600" />,
+    title: "Personalisiert",
+    description: "Jeder Plan wird individuell an Ihre Bedürfnisse angepasst"
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,7 +96,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/create-plan">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <Button size="lg" className="text-white px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gray-800 hover:bg-gray-700">
                     Ernährungsplan erstellen
                   </Button>
                 </Link>
@@ -124,11 +107,7 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 rounded-3xl transform rotate-6 opacity-20"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" 
-                alt="Frische Lebensmittel" 
-                className="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl"
-              />
+              <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" alt="Frische Lebensmittel" className="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
@@ -138,7 +117,7 @@ const Index = () => {
       <section id="philosophy" className="py-20 bg-gradient-to-br from-orange-50 to-orange-100 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path d="M20,50 Q50,20 80,50 Q50,80 20,50" fill="currentColor" className="text-orange-300"/>
+            <path d="M20,50 Q50,20 80,50 Q50,80 20,50" fill="currentColor" className="text-orange-300" />
           </svg>
         </div>
         
@@ -153,8 +132,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {values.map((value, index) => (
-              <Card key={index} className="bg-white/70 backdrop-blur-sm border-orange-200 hover:shadow-lg transition-all duration-300 hover:scale-105">
+            {values.map((value, index) => <Card key={index} className="bg-white/70 backdrop-blur-sm border-orange-200 hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 p-4 bg-orange-100 rounded-full w-fit">
                     {value.icon}
@@ -164,8 +142,7 @@ const Index = () => {
                 <CardContent>
                   <p className="text-orange-700 text-center">{value.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -183,63 +160,33 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Starter",
-                price: "29€",
-                period: "pro Monat",
-                description: "Perfekt für Einsteiger",
-                features: [
-                  "Personalisierter Ernährungsplan",
-                  "Wöchentliche Rezepte",
-                  "Grundlegende Nährstoffanalyse",
-                  "Email-Support"
-                ],
-                popular: false
-              },
-              {
-                name: "Pro",
-                price: "49€",
-                period: "pro Monat",
-                description: "Für ambitionierte Ziele",
-                features: [
-                  "Erweiterte Personalisierung",
-                  "Täglich neue Rezepte",
-                  "Detaillierte Nährstoffanalyse",
-                  "Einkaufslisten",
-                  "Priority Support",
-                  "Fitness-Integration"
-                ],
-                popular: true
-              },
-              {
-                name: "Premium",
-                price: "79€",
-                period: "pro Monat",
-                description: "Komplette Transformation",
-                features: [
-                  "Alles aus Pro",
-                  "1:1 Ernährungsberatung",
-                  "Wöchentliche Check-ins",
-                  "Supplement-Empfehlungen",
-                  "Meal-Prep Guides",
-                  "24/7 Premium Support"
-                ],
-                popular: false
-              }
-            ].map((plan, index) => (
-              <div key={index} className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
-                plan.popular 
-                  ? 'bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-2xl scale-105' 
-                  : 'bg-white shadow-lg hover:shadow-xl border border-gray-100'
-              }`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            {[{
+            name: "Starter",
+            price: "29€",
+            period: "pro Monat",
+            description: "Perfekt für Einsteiger",
+            features: ["Personalisierter Ernährungsplan", "Wöchentliche Rezepte", "Grundlegende Nährstoffanalyse", "Email-Support"],
+            popular: false
+          }, {
+            name: "Pro",
+            price: "49€",
+            period: "pro Monat",
+            description: "Für ambitionierte Ziele",
+            features: ["Erweiterte Personalisierung", "Täglich neue Rezepte", "Detaillierte Nährstoffanalyse", "Einkaufslisten", "Priority Support", "Fitness-Integration"],
+            popular: true
+          }, {
+            name: "Premium",
+            price: "79€",
+            period: "pro Monat",
+            description: "Komplette Transformation",
+            features: ["Alles aus Pro", "1:1 Ernährungsberatung", "Wöchentliche Check-ins", "Supplement-Empfehlungen", "Meal-Prep Guides", "24/7 Premium Support"],
+            popular: false
+          }].map((plan, index) => <div key={index} className={`relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${plan.popular ? 'bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-2xl scale-105' : 'bg-white shadow-lg hover:shadow-xl border border-gray-100'}`}>
+                {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <Badge className="bg-white text-orange-600 px-4 py-1 text-sm font-semibold">
                       Beliebtester Plan
                     </Badge>
-                  </div>
-                )}
+                  </div>}
                 
                 <div className="text-center mb-8">
                   <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-gray-800'}`}>
@@ -259,29 +206,20 @@ const Index = () => {
                 </div>
 
                 <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center">
+                  {plan.features.map((feature, idx) => <li key={idx} className="flex items-center">
                       <CheckCircle className={`w-5 h-5 mr-3 ${plan.popular ? 'text-orange-200' : 'text-orange-500'}`} />
                       <span className={`${plan.popular ? 'text-white' : 'text-gray-700'}`}>
                         {feature}
                       </span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
 
                 <Link to="/create-plan">
-                  <Button 
-                    className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${
-                      plan.popular 
-                        ? 'bg-white text-orange-600 hover:bg-orange-50' 
-                        : 'bg-orange-500 text-white hover:bg-orange-600'
-                    }`}
-                  >
+                  <Button className={`w-full py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${plan.popular ? 'bg-white text-orange-600 hover:bg-orange-50' : 'bg-orange-500 text-white hover:bg-orange-600'}`}>
                     Plan wählen
                   </Button>
                 </Link>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -299,14 +237,11 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <Carousel className="w-full">
               <CarouselContent>
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index}>
+                {testimonials.map((testimonial, index) => <CarouselItem key={index}>
                     <Card className="bg-white/80 backdrop-blur-sm border-orange-200">
                       <CardContent className="p-8 text-center">
                         <div className="flex justify-center mb-4">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                          ))}
+                          {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
                         </div>
                         <blockquote className="text-lg text-orange-700 mb-6 italic">
                           "{testimonial.text}"
@@ -321,8 +256,7 @@ const Index = () => {
                         </cite>
                       </CardContent>
                     </Card>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               <CarouselPrevious className="border-orange-200 text-orange-600" />
               <CarouselNext className="border-orange-200 text-orange-600" />
@@ -411,15 +345,15 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
 
 // Helper component for Sprout icon (using available icons)
-const Sprout = ({ className }: { className: string }) => (
-  <div className={className}>
+const Sprout = ({
+  className
+}: {
+  className: string;
+}) => <div className={className}>
     <Leaf className="w-full h-full" />
-  </div>
-);
-
+  </div>;
 export default Index;
